@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/category")
 public class CategoryController {
@@ -17,8 +19,15 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping("/list")
-    public ModelAndView showCategoryForm(Pageable pageable){
-        Page<Category> categories = categoryService.findAll(pageable);
+    public ModelAndView showCategoryForm(@RequestParam ("s") Optional <String> s, Pageable pageable){
+        Page<Category> categories;
+
+        if (s.isPresent()){
+            categories = categoryService.findAllByNameContaining(s.get(), pageable);
+        }else {
+            categories = categoryService.findAll(pageable);
+        }
+
         ModelAndView modelAndView = new ModelAndView("/category/list");
         modelAndView.addObject("categories", categories);
         return modelAndView;

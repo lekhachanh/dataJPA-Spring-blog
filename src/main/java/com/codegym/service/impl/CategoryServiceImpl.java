@@ -31,4 +31,9 @@ public class CategoryServiceImpl implements CategoryService {
     public void remove(Long id) {
         categoryRepository.delete(id);
     }
+
+    @Override
+    public Page<Category> findAllByNameContaining(String name, Pageable pageable) {
+        return categoryRepository.findAllByNameContaining(name, pageable);
+    }
 }
