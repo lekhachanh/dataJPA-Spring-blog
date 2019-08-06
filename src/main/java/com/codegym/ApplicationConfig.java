@@ -1,6 +1,8 @@
 package com.codegym;
 
+import com.codegym.service.BlogService;
 import com.codegym.service.CategoryService;
+import com.codegym.service.impl.BlogServiceImpl;
 import com.codegym.service.impl.CategoryServiceImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -48,16 +50,15 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     }
 
 
-//  @Bean
-//   public BlogService blogService() {
-//       return new BlogServiceImpl();
-//    }
-//
+  @Bean
+   public BlogService blogService() {
+       return new BlogServiceImpl();
+    }
+
    @Bean
     public CategoryService categoryService() {
         return new CategoryServiceImpl();
    }
-
 
     //cau hinh thymeleaf
     @Bean

@@ -3,6 +3,7 @@ package com.codegym.model;
 import javax.persistence.*;
 import java.util.List;
 
+
 @Entity
 @Table(name = "categories")
 public class Category {
@@ -10,7 +11,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-//
+
 //    @OneToMany(targetEntity = Blog.class)
 //    private List<Blog> blogs;
 
@@ -37,4 +38,12 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+
+//    public List<Blog> getBlogs() {
+//        return blogs;
+//    }
+//
+//    public void setBlogs(List<Blog> blogs) {
+//        this.blogs = blogs;
+//    }
 }
