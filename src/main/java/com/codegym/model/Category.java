@@ -12,8 +12,8 @@ public class Category {
     private Long id;
     private String name;
 
-//    @OneToMany(targetEntity = Blog.class)
-//    private List<Blog> blogs;
+    @OneToMany(targetEntity = Blog.class)
+    private List<Blog> blogs;
 
 
     public Category() {
@@ -39,11 +39,11 @@ public class Category {
         this.name = name;
     }
 
-//    public List<Blog> getBlogs() {
-//        return blogs;
-//    }
-//
-//    public void setBlogs(List<Blog> blogs) {
-//        this.blogs = blogs;
-//    }
+   public List<Blog> getBlogs() {
+        return blogs;
+   }
+
+    public void setBlogs(List<Blog> blogs) {
+        this.blogs = blogs;
+    }
 }

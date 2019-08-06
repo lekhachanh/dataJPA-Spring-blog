@@ -17,6 +17,7 @@
     <tr>
         <th>Author</th>
         <th>Content</th>
+        <th>Category</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
@@ -24,6 +25,7 @@
         <tr>
             <td th:text="${blog.author}">
             <td th:text="${blog.content}">
+            <td th:text="${blog.category.name}"></td>
             <td><a th:href="@{/blog/edit/__${blog.id}__}">Edit</a></td>
             <td><a th:href="@{/blog/delete/__${blog.id}__}">Delete</a></td>
         </tr>
