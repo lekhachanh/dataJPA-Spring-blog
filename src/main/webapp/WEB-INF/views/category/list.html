@@ -8,7 +8,7 @@
 <a href="/category/create">Create new category</a>
 <h1>Category List</h1>
 <form>
-    Search by Name:
+    Search by Author:
     <input type="text" name="s"/>
     <input type="submit" value="Search">
 </form>
@@ -18,12 +18,14 @@
         <th>Name</th>
         <th>Edit</th>
         <th>Delete</th>
+        <th>View</th>
     </tr>
     <th:block th:each="category:${categories}">
         <tr>
             <td th:text="${category.name}">
             <td><a th:href="@{/category/edit/__${category.id}__}">Edit</a></td>
             <td><a th:href="@{/category/delete/__${category.id}__}">Delete</a></td>
+            <td><a th:href="@{/category/view/__${category.id}__}">View</a></td>
         </tr>
     </th:block>
 </table>

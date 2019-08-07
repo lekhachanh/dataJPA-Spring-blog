@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d04cf551-c7b8-482d-816b-fcbf60991724" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codegym/formatter/CategoryFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category/view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -11,17 +11,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/codegym/ApplicationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/codegym/ApplicationConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/codegym/controller/BlogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/codegym/controller/BlogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/codegym/model/Blog.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/codegym/model/Blog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/codegym/model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/codegym/model/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/codegym/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/codegym/controller/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/codegym/repository/BlogRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/codegym/repository/BlogRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/codegym/service/BlogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/codegym/service/BlogService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/codegym/service/impl/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/codegym/service/impl/BlogServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/springDataRepositoryBlog-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/springDataRepositoryBlog-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/ApplicationConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/controller/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/model/Blog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/blog/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/blog/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/blog/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/blog/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/repository/BlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/repository/BlogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/service/impl/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category/list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,8 +69,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -303,7 +304,8 @@
       <workItem from="1565066018998" duration="3649000" />
       <workItem from="1565081024018" duration="6297000" />
       <workItem from="1565092759333" duration="14000" />
-      <workItem from="1565093373246" duration="6971000" />
+      <workItem from="1565093373246" duration="7888000" />
+      <workItem from="1565140820655" duration="2294000" />
     </task>
     <servers />
   </component>

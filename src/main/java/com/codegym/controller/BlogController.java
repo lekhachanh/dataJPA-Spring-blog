@@ -29,11 +29,11 @@ public class BlogController {
     }
 
     @GetMapping("/list")
-    public ModelAndView showBlogForm(@RequestParam ("s")Optional<String> s, Pageable pageable){
+    public ModelAndView showBlogForm(@RequestParam("s") Optional<String> s, Pageable pageable) {
         Page<Blog> blogs;
-        if (s.isPresent()){
+        if (s.isPresent()) {
             blogs = blogService.findAllByAuthorContaining(s.get(), pageable);
-        }else {
+        } else {
             blogs = blogService.findAll(pageable);
         }
         ModelAndView modelAndView = new ModelAndView("/blog/list");
@@ -59,13 +59,13 @@ public class BlogController {
     }
 
     @GetMapping("/edit/{id}")
-    public ModelAndView editBlogForm(@PathVariable Long id){
+    public ModelAndView editBlogForm(@PathVariable Long id) {
         Blog blog = blogService.findById(id);
         if (blog != null) {
             ModelAndView modelAndView = new ModelAndView("/blog/edit");
-            modelAndView.addObject("blog", blog );
+            modelAndView.addObject("blog", blog);
             return modelAndView;
-        }else {
+        } else {
             ModelAndView modelAndView = new ModelAndView("/error-404");
             return modelAndView;
         }
@@ -89,14 +89,14 @@ public class BlogController {
             modelAndView.addObject("message", "delete successfully");
             return modelAndView;
 
-        }else {
+        } else {
             ModelAndView modelAndView = new ModelAndView("/error-404");
             return modelAndView;
         }
     }
 
     @PostMapping("/remove")
-    public ModelAndView deleteblog(@ModelAttribute ("blog") Blog blog){
+    public ModelAndView deleteBlog(@ModelAttribute("blog") Blog blog) {
         blogService.remove(blog.getId());
         ModelAndView modelAndView = new ModelAndView("/blog/delete");
         modelAndView.addObject("blog", blog);

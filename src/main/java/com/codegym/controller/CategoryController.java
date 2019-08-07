@@ -1,6 +1,8 @@
 package com.codegym.controller;
 
+import com.codegym.model.Blog;
 import com.codegym.model.Category;
+import com.codegym.service.BlogService;
 import com.codegym.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,6 +19,9 @@ public class CategoryController {
 
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private BlogService blogService;
 
     @GetMapping("/list")
     public ModelAndView showCategoryForm(@RequestParam ("s") Optional <String> s, Pageable pageable){
@@ -93,6 +98,21 @@ public class CategoryController {
         ModelAndView modelAndView = new ModelAndView("/category/delete");
         modelAndView.addObject("category", category);
         modelAndView.addObject("message", "delete success");
+        return modelAndView;
+    }
+
+    @GetMapping("/view/{id}")
+    public ModelAndView viewCategory(@PathVariable("id") Long id){
+        Category category = categoryService.findById(id);
+        if(category == null){
+            return new ModelAndView("/error-404");
+        }
+
+        Iterable<Blog> blogs = blogService.findAllByCategory(category);
+
+        ModelAndView modelAndView = new ModelAndView("/category/view");
+        modelAndView.addObject("category", category);
+        modelAndView.addObject("blogs", blogs);
         return modelAndView;
     }
 
