@@ -44,6 +44,8 @@ public class BlogController {
     }
 
     @RequestMapping(value = "/blog/view-article/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody//lấy thông tin đối tượng Blog trong @RequestBody đẩy
+                 //vào phương thức thực thi của web service.
     public ResponseEntity<Blog> getArticle(@PathVariable("id") Long id){
         System.out.println("fetch article by id"+id);
         Blog blog = blogService.findById(id);
@@ -51,7 +53,7 @@ public class BlogController {
             System.out.println("Article with id" + id + " not found");
             return new ResponseEntity<Blog>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<Blog>(HttpStatus.OK);
+        return new ResponseEntity<Blog>(blog, HttpStatus.OK);
     }
 //
 //    @GetMapping("/create")

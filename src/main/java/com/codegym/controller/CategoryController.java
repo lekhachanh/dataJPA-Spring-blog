@@ -40,7 +40,9 @@ public class CategoryController {
         }
         return new ResponseEntity<Page<Category>>(categories, HttpStatus.OK);
     }
+
     @RequestMapping(value = "/category/view-category/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
     public ResponseEntity<Category> getCategory(@PathVariable("id") Long id){
         System.out.println("fetch Category by id"+id);
         Category category = categoryService.findById(id);
@@ -48,7 +50,7 @@ public class CategoryController {
             System.out.println("Category with id" + id + " not found");
             return new ResponseEntity<Category>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<Category>(HttpStatus.OK);
+        return new ResponseEntity<Category>(category, HttpStatus.OK);
     }
 
 
