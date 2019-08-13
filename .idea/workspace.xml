@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/94f1ec46-6f45-4483-823a-8a47f373a879.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/94f1ec46-6f45-4483-823a-8a47f373a879.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/codegym/controller/BlogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/codegym/controller/BlogController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/codegym/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/codegym/controller/CategoryController.class" afterDir="false" />
@@ -187,7 +188,7 @@
       </method>
     </configuration>
     <configuration name="list.html" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.5.43" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="$USER_HOME$/Downloads/jdk-8u221-linux-x64/jdk1.8.0_221">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/blog/list" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/blogList" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : com.codegym : springDataRepositoryBlog-1.0-SNAPSHOT.war">
@@ -269,12 +270,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2feef8ee" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -298,7 +294,14 @@
       <workItem from="1565092759333" duration="14000" />
       <workItem from="1565093373246" duration="7888000" />
       <workItem from="1565140820655" duration="2294000" />
-      <workItem from="1565657543402" duration="6284000" />
+      <workItem from="1565657543402" duration="8459000" />
+      <workItem from="1565666883080" duration="633000" />
+      <workItem from="1565667924162" duration="749000" />
+      <workItem from="1565668808322" duration="744000" />
+      <workItem from="1565669640860" duration="710000" />
+      <workItem from="1565670723198" duration="2186000" />
+      <workItem from="1565676952389" duration="2500000" />
+      <workItem from="1565683451379" duration="399000" />
     </task>
     <servers />
   </component>

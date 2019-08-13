@@ -7,12 +7,14 @@ import com.codegym.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Optional;
 
@@ -25,7 +27,7 @@ public class CategoryController {
     @Autowired
     private BlogService blogService;
 
-    @RequestMapping(value = "/category/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/categories", method = RequestMethod.GET)
     public ResponseEntity<Page<Category>> showCategoryForm(@RequestParam ("s") Optional <String> s, Pageable pageable){
         Page<Category> categories = categoryService.findAll(pageable);
 
@@ -41,8 +43,7 @@ public class CategoryController {
         return new ResponseEntity<Page<Category>>(categories, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/category/view-category/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
+    @RequestMapping(value = "/categories/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Category> getCategory(@PathVariable("id") Long id){
         System.out.println("fetch Category by id"+id);
         Category category = categoryService.findById(id);
@@ -53,38 +54,32 @@ public class CategoryController {
         return new ResponseEntity<Category>(category, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/categories", method = RequestMethod.POST)
+    public ResponseEntity<Void> createCategory(@RequestBody Category category, UriComponentsBuilder ucBuilder) {
+        categoryService.save(category);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(ucBuilder.path("/categories/{id}").buildAndExpand(category.getId()).toUri());
+        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+    }
 
-//
-//    @GetMapping("/create")
-//    public ModelAndView showCreateForm(){
-//        ModelAndView modelAndView = new ModelAndView("/category/create");
-//        modelAndView.addObject("category", new Category());
-//        return modelAndView;
-//    }
-//
-//    @PostMapping("/save")
-//    public ModelAndView saveCategory(@ModelAttribute("category") Category category) {
-//        categoryService.save(category);
-//
-//        ModelAndView modelAndView = new ModelAndView("/category/create");
-//        modelAndView.addObject("category", new Category());
-//        modelAndView.addObject("message", "created successfully");
-//        return modelAndView;
-//    }
-//
-//    @GetMapping("/edit/{id}")
-//    public ModelAndView editCategoryForm(@PathVariable Long id){
-//        Category category = categoryService.findById(id);
-//        if (category != null) {
-//            ModelAndView modelAndView = new ModelAndView("/category/edit");
-//            modelAndView.addObject("category", category );
-//            return modelAndView;
-//        }else {
-//            ModelAndView modelAndView = new ModelAndView("/error-404");
-//            return modelAndView;
-//        }
-//    }
-//
+
+    @RequestMapping(value = "/categories/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<Category> updateCategory(@PathVariable("id") Long id, @RequestBody Category category) {
+        System.out.println("Updating Category " + id);
+
+        Category currentCategory = categoryService.findById(id);
+
+        if (currentCategory == null) {
+            System.out.println("Category with id " + id + " not found");
+            return new ResponseEntity<Category>(HttpStatus.NOT_FOUND);
+        }
+
+        currentCategory.setName(category.getName());
+        currentCategory.setId(category.getId());
+        categoryService.save(currentCategory);
+        return new ResponseEntity<Category>(currentCategory, HttpStatus.OK);
+    }
+
 //    @PostMapping("/update")
 //    public ModelAndView updateCategory(@ModelAttribute("category") Category category) {
 //        categoryService.save(category);
