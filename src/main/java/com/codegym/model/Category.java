@@ -1,5 +1,7 @@
 package com.codegym.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,7 +14,7 @@ public class Category {
     private Long id;
     private String name;
 
-    @OneToMany(targetEntity = Blog.class)
+    @OneToMany(targetEntity = Blog.class, fetch = FetchType.EAGER)
     private List<Blog> blogs;
 
 
@@ -39,9 +41,9 @@ public class Category {
         this.name = name;
     }
 
-   public List<Blog> getBlogs() {
+    public List<Blog> getBlogs() {
         return blogs;
-   }
+    }
 
     public void setBlogs(List<Blog> blogs) {
         this.blogs = blogs;
